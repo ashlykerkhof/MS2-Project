@@ -1,0 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+    display: flex;
+    margin: auto;
+    height: 100%;
+    background: url(/assets/images/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size:cover;
+    background-size: cover;
+    
+}
+
+/*----logo----*/
+
+.logo {
+    height: 100px;
+    position: relative;
+    left: 120%;
+}
+
+h1 {
+    position: relative;
+    left: 140%;
+    color: #fbeca3;
+}
+/*---Memory Game----*/
+
+.memory-game {
+  width: 500px;
+  height: 450px;
+  display: flex;
+  position: relative;
+  left: 25%;
+  margin-top: 12%;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.5) ;
+}
+
+.memory-card {
+  width: calc(20% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  z-index: 1;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+ .memory-card:active {
+   transform: scale(0.97);
+   transition: transform .2s;
+ }
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  position: absolute;
+  border-radius: 1px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  position: absolute;
+  border-radius: 1px;
+  backface-visibility: hidden;
+}
+

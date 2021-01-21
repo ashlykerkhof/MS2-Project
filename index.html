@@ -5,131 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lord of the Rings Memory Game</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script rel="stylesheet" href="assets/js/ass.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
     <section>
         <!--Logo and background-->
-
+            <img class="logo" src="assets/images/logo.png" alt="">
+                <h1>Memory Game!</h1>
     </section>
     <section>
         <!--Highscores-->
     </section>
-    <section class="memory- game">
         <!---Memory game-->
-        <div class="memory-card">
-            <img class="front-face" src="assets/images/gollum.jpg" alt="Gollum">
-            <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
-        </div>
-        <div class="memory-card">
-            <img class="front-face" src="assets/images/gollum.jpg" alt="Gollum">
-            <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
-        </div>
-        <div class="memory-card">
+    <section class="memory-game">
+        
+        <div class="memory-card" data-framework = "nazgul">
             <img class="front-face" src="assets/images/nazgul.jpg" alt="Nazgul">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-         <div class="memory-card">
+         <div class="memory-card" data-framework = "nazgul">
             <img class="front-face" src="assets/images/nazgul.jpg" alt="Nazgul">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-         <div class="memory-card">
+         <div class="memory-card" data-framework = "legolas">
             <img class="front-face" src="assets/images/legolas.jpg" alt="Legolas">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-         <div class="memory-card">
+         <div class="memory-card" data-framework = "legolas">
             <img class="front-face" src="assets/images/legolas.jpg" alt="Legolas">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-         <div class="memory-card">
-            <img class="front-face" src="assets/images/galadrial.jpg" alt="Galadrial">
-            <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
-        </div>
-         <div class="memory-card">
-            <img class="front-face" src="assets/images/galadrial.jpg" alt="Galadrial">
-            <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
-        </div>
-         <div class="memory-card">
+         
+         <div class="memory-card" data-framework = "gandalf">
             <img class="front-face" src="assets/images/gandalf.jpg" alt="Gandalf">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
+        <div class="memory-card" data-framework = "gandalf">
             <img class="front-face" src="assets/images/gandalf.jpg" alt="Gandalf">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
+        <div class="memory-card" data-framework = "aragorn">
             <img class="front-face" src="assets/images/aragorn.jpg" alt="Aragon">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-          <div class="memory-card">
+          <div class="memory-card" data-framework = "aragorn">
             <img class="front-face" src="assets/images/aragorn.jpg" alt="Aragon">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-          <div class="memory-card">
+          <div class="memory-card" data-framework = "sam">
             <img class="front-face" src="assets/images/sam.jpg" alt="Sam">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
+        <div class="memory-card" data-framework = "sam">
             <img class="front-face" src="assets/images/sam.jpg" alt="Sam">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
+        <div class="memory-card" data-framework = "orc">
             <img class="front-face" src="assets/images/orc.jpg" alt="Orc">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
+        <div class="memory-card" data-framework = "orc">
             <img class="front-face" src="assets/images/orc.jpg" alt="Orc">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
-            <img class="front-face" src="assets/images/boromir.jpg" alt="Boromir">
-            <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
-        </div>
-        <div class="memory-card">
-            <img class="front-face" src="assets/images/boromir.jpg" alt="Boromir">
-            <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
-        </div>
-        <div class="memory-card">
+        
+        <div class="memory-card" data-framework = "gimli">
             <img class="front-face" src="assets/images/gimli.jpg" alt="Gimli">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-         <div class="memory-card">
+         <div class="memory-card" data-framework = "gimli">
             <img class="front-face" src="assets/images/gimli.jpg" alt="Gimli">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-         <div class="memory-card">
+         <div class="memory-card" data-framework = "frodo">
             <img class="front-face" src="assets/images/frodo.jpeg" alt="Frodo">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
+        <div class="memory-card" data-framework = "frodo">
             <img class="front-face" src="assets/images/frodo.jpeg" alt="Frodo">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
-            <img class="front-face" src="assets/images/pippin.jpg" alt="Pippin">
-            <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
-        </div>
-        <div class="memory-card">
-            <img class="front-face" src="assets/images/pippin.jpg" alt="Pippin">
-            <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
-        </div>
-        <div class="memory-card">
+        
+        <div class="memory-card" data-framework = "mary">
             <img class="front-face" src="assets/images/mary.jpg" alt="Mary">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
-            <img class="front-face" src="assets/images/saurons-mouth.png" alt="Mouth Of Sauron">
+        <div class="memory-card" data-framework = "mary">
+            <img class="front-face" src="assets/images/mary.jpg" alt="Mary">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
-            <img class="front-face" src="assets/images/saurons-mouth.png" alt="Mouth Of Sauron">
-            <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
-        </div>
-        <div class="memory-card">
+        
+        <div class="memory-card" data-framework = "sauron">
             <img class="front-face" src="assets/images/sauron.jpg" alt="Eye Of Sauron">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
-        <div class="memory-card">
+        <div class="memory-card" data-framework = "sauron">
             <img class="front-face" src="assets/images/sauron.jpg" alt="Eye Of Sauron">
             <img class="back-face" src="assets/images/onering.jpg" alt="The One Ring">
         </div>
@@ -137,8 +107,9 @@
     <footer>
         <!--Footer-->
     </footer>
-    
 
+    <script rel="stylesheet" src="assets/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </body>
 </html>

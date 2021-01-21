@@ -1,45 +1,116 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/ashlykerkhof/ms2-project">
+    <img src="logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-Welcome USER_NAME,
+  <h3 align="center">Lord of the rings memory game</h3>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+  <p align="center">
+    The idea here is to make a game that ios enjopyable and has a replay value, i want the user tp have a fun experience and i beloieve thry don't havce to be a lord of the rings fan to play!</p>
+<p align="center">
+    
+    </p>
 
-## Gitpod Reminders
+    <br>
+    <a href="https://github.com/ashlykerkhof/ms2-project"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://ashlykerkhof.github.io/MS2-project/">View Demo</a>
+  </p>
+</p>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: *Make Public*,
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-Another blue button should appear to click: *Open Browser*.
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [UX](#UX)
+  * [User Stories](#use-stories)
+  * [Wireframes](#WireFrames)
+  * [Mockup](#MockUp)
+* [Testng](#testing)
+* [Deployment](#deployment)
+* [License](#license)
+* [Media](#media)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The game is mde for users to experience a fun and interctive experience, i want people to play the game and i want them to return and try and beat their old score.
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Built With
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* [Bootstrap](Bootstrap)
+* [Hover.css](Hover.css)
+* [Html/CSS](Html/Css)
+* [JQuery](JQuery)
+* [Javascript](Javascript)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+<!-- User Experience-->
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## UX
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## User Stories
 
---------
 
-Happy coding!
+## Wireframes
+
+<a href="wireframe.pdf" alt="wireframes" target="_blank">WireFrames PDF Here!</a>
+
+
+## Mockup
+
+<img src="markup.png" alt="Mark up">
+
+As you can see the website is responsive on all devices.
+
+<!--TESTING-->
+
+## Tests
+
+
+### Testing/Bugs
+
+
+<!--Deployment -->
+
+## Deployment
+
+the site has been deployed to GitPages, if needed to update, or edit then please commit and push to GitPages.
+
+<!-- LICENSE -->
+## License
+
+Copyright and lincensing done by me. 
+
+<!-- Media -->
+## Media
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@ashlykerkhof](https://twitter.com/Ashlykerkhof) - email: Ashly.Kerkhof@outlook.com
+
+Project Link: [https://github.com/ashlykerkhof/ms2-project](https://github.com/ashlykerkhof/ms2-project)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [Float Panel](Float-panel)
+* [W3school](W3school)
+* [Slack](Slack)

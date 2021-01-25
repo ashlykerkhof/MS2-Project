@@ -6,9 +6,9 @@
 
 body {
 
-    display: flex;
-    margin: auto;
     height: 100%;
+    margin: 0;
+    text-align: center;
     background: url(/assets/images/background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -22,35 +22,35 @@ body {
 .logo {
     height: 100px;
     position: relative;
-    left: 120%;
+  
 }
 
 h1 {
     position: relative;
-    left: 140%;
     color: #fbeca3;
 }
 /*---Memory Game----*/
 
 .memory-game {
-  width: 500px;
-  height: 450px;
+  background-color: #0000;
+  border-radius: 15px;
   display: flex;
-  position: relative;
-  left: 25%;
-  margin-top: 12%;
   flex-wrap: wrap;
-  perspective: 1000px;
+  justify-content: space-around;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+
+
+  padding: 5px;
   z-index: 1;
-  background-color: rgba(0,0,0,0.5) ;
 }
 
 .memory-card {
-  width: calc(20% - 10px);
-  height: calc(25% - 10px);
-  margin: 5px;
-  position: relative;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  width: 100px;
+  height: 100px;
+  align-items: center;
+
   z-index: 1;
   transform: scale(1);
   transform-style: preserve-3d;
@@ -86,3 +86,48 @@ h1 {
   backface-visibility: hidden;
 }
 
+/*-------score panel----*/
+
+.score-panel {
+    font-size: 14px;
+    padding: 2px;
+}
+
+.ring-rating > li {
+    display: inline-block;
+    padding: 2px;
+}
+
+.move-counter {
+    padding: 2px;
+}
+
+.time-container {
+   background-color: black;
+   border-radius: 2px;
+   color: #fff;
+   margin: 5px;
+   padding: 5px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.card, .btn-reset {
+    cursor: pointer;
+}
+
+.btn {
+    border-radius: 1px;
+    color: red;
+    border: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+}

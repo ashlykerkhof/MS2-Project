@@ -161,6 +161,9 @@ function addStats() {
             stats.appendChild(statsElement);
         }
         let p = stats.querySelectorAll("p.stats")
+        p[0].innerHTML = "Time Taken" + minutes + "Minutes" + seconds + "Seconds";
+        p[1].innerHTML = "Moves Used" + moves;
+        p[2].innerHTML = "Ring Rating" + ringCount + "Out of 3";
 }
 
 

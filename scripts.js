@@ -1,6 +1,7 @@
-const  cardGame = ["aragon.jpg", "aragon.jpg", "gandalf.jpg", "gandalf.jpg", "gollum.jpg", "gollum.jpg", "gimli.jpg", "gimli.jpg", "legolas.jpg", "legolas.jpg", "orc.jpg", "orc.jpg", "sauron.jpg", "sauron.jpg", "pippin.jpg", "pippin.jpg", "frodo.jpeg", "frodo.jpeg", "nazgul.jpg", "nazgul.jpg",]
+const deckCards = document.querySelector(".card")
+let cards = ["...card"];
 
-const deck = document.querySelector(".memory-game")
+const deck = document.querySelector(".deck");
 
 let opened = [];
 
@@ -31,43 +32,51 @@ let seconds = 0;
 let timeStart = false;
 
 function shuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-    while(currentIndex !==0) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-        randomValue = array[currentIndex];
+        temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-    return array;
-    
-}
 
+    return array;
+};
 var myMusic;
+document.body.onload = startGame();
 
 function startGame() {
-    const shuffledDeck = shuffle(deckCards);
-        for (let i = 0; i < shuffledDeck.length; i++) {
-            const cardTag = document.createElement("LI");
-            cardTag.classList.add("card");
-            const addImage = document.createElement("IMG");
-            cardTag.appendChild(addImage);
-            addImage.setAttribute("src", "assets/images/" + shuffledDeck[i]);
+    const shuffledDeck = shuffle(cards);
+        for (let i = 0; i < cards.length; i++) {
+            const liTag = document.createElement('li');
+            liTag.classList.add("card");
+            const addImage = document.createElement("img");
+            liTag.appendChild(addImage);
+            addImage.setAttribute("src", "images/" + shuffledDeck[i]);
             addImage.setAttribute("alt", "images for the memory game");
-            deck.appendChild(cardTag);
+            deck.appendChild(liTag);
         };
 
     myMusic = new sound("background.mp3");
     myMusic.play();
 };
 
+var displayCard = function (){
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+    this.classList.toggle("disabled");
+};
+
+
+
 startGame();
 
 function removeCard() {
     while(deck.hasChildNodes()) {
         deck.removeChild(deck.FirstChild);
-    }
-}
+    };
+};
 
 function timer() {
     time = setInterval(function() {
@@ -75,11 +84,10 @@ function timer() {
         if(seconds === 60) {
             minutes ++;
             seconds = 0;
-        }
+        };
         timeCount.innerHTML = '<i class="fas fa-hourglass"></i>' + "Timer" + minutes + "Mins" + seconds + "Secs";
     }, 1000);
-}
-
+};
 function stopTime() {
     setInterval(time)
 };
@@ -110,7 +118,7 @@ function ringCounter() {
     if(moves === 16) {
         ring[2].firstElementChild.classList.remove("fas fa-ring");
         ringCount --;
-    }
+    };
     if(moves === 22) {
         ring[1].firstElementChild.classList.remove("fas fa-ring");
         ringCount --;
@@ -166,4 +174,52 @@ function addStats() {
         p[2].innerHTML = "Ring Rating" + ringCount + "Out of 3";
 }
 
+function displayModal() {
+    const modalClose = document.getElementsByClassName("close")[0];
+    modal.style.display = "block";
+    modalClose.onclick = function() {
+        modal.style.display = "none";    
+    }
+        window.onclick = function(event) {
+            if(this.event.target == modal) {
+                modal.style.display = "none";
+            };
+        };
+};
 
+function winGame() {
+    if(matched.length === 20) {
+        stopTime();
+        addStats();
+        displayModal();
+    }
+}
+
+deck.addEventListener("click", function(event) {
+    if(event.target.nodeName === "LI") {
+        console.log(event.target.nodeName + "Was Clicked")
+        if(timeStart === false) {
+        timeStart = true;
+        timer();
+    }
+        flipCard();
+    }
+    function flipCard() {
+        event.target.classList("flip");
+        addToOpen();
+
+    }
+    function addToOpen() {
+        if(opened.length === 0 || opened.length ===1) {
+            opened.push(event.target.firstElementChild);
+        }
+        compareTwo();
+    }
+
+})
+
+reset.addEventListener("click", resetGame);
+playAgain.addEventListener("click", function(){
+    modal.style.display = "none";
+    resetGame();
+})

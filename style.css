@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bilbo&display=swap');
 
+html {
+    box-sizing: border-box;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -12,7 +16,7 @@ body {
     margin: 0;
     font-family: 'Bilbo', cursive;
     text-align: center;
-    background: url(/assets/images/background.jpg) no-repeat center center fixed;
+    background: url(/images/background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size:cover;
@@ -107,7 +111,7 @@ ul, li {
 
 /*---Memory Game----*/
 
-.memory-game {
+.deck {
     background: linear-gradient(to bottom, #fbeca3);
     border-radius: 15px;
     display: flex;
@@ -123,53 +127,128 @@ ul, li {
 
 }
 
-.memory-game, .memory-card {
+.deck, .card {
     box-shadow: 2px 5px 25px 0 #fbeca3;
     background: #cf6010;
 }
 
-.memory-card {
-    background: url(assets/images/onering.jpg);
-    border-radius: 5px;
-    width: 50px;
-    height: 50px;
-}
-
-.memory-img {
-    user-select: none;
-    width:50px;
-}
-
-.memory-game img {
-    visibility: hidden;
+.card img{
+    
+    border-radius: 0px;
+    width: 100px;
+    height: 100px;
+    background: #000;
 }
 
 
-.memory-card.flip {
-    transform: rotateY(180deg);
-    transition: transform 0.3s linear;
-    pointer-events: none;
+
+
+
+
+.deck .card.open {
+	transform: rotateY(0);
+	background: #02b3e4;
+	cursor: default;
+	animation-name: flipInY;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
 }
 
-.flip img {
-    visibility: hidden;
-
+.deck .card.show {
+	font-size: 33px;
 }
 
-.memory-card.match {
-    visibility: visible;
-    animation: pulse 1.5s;
+.deck .card.match {
+	cursor: default;
+	background: #E5F720;
+	font-size: 33px;
+	animation-name: rubberBand;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+.deck .card.unmatched {
+	animation-name: pulse;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+	background: #e2043b;
+}
+
+.deck .card.disabled {
+	pointer-events: none;
+	opacity: 0.9;
+}
+
+@keyframes flipInY {
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		animation-timing-function: ease-in;
+		opacity: 0;
+	}
+
+	40% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		animation-timing-function: ease-in;
+	}
+
+	60% {
+		transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+		opacity: 1;
+	}
+
+	80% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+	}
+
+	to {
+		transform: perspective(400px);
+	}
+}
+@keyframes rubberBand {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, .95, 1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    80% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.2, 1.2, 1.2);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
 }
+
 

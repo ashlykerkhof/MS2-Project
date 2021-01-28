@@ -16,7 +16,7 @@ body {
     margin: 0;
     font-family: 'Bilbo', cursive;
     text-align: center;
-    background: url(images/background.jpg) no-repeat center center fixed;
+    background: url(images/background.jpg) no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size:cover;
@@ -127,62 +127,43 @@ ul, li {
 
 }
 
+.card {
+  width: calc(20% - 10px);
+  height: calc(25% - 10px);
+  margin: 0px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
 .deck, .card {
     box-shadow: 2px 5px 25px 0 #fbeca3;
     background: #cf6010;
 }
 
-.card img{
-    
-    border-radius: 0px;
-    width: 100px;
-    height: 100px;
-    background: #000;
+
+
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
 }
 
 
 
-
-
-
-.deck .card.open {
-	transform: rotateY(0);
-	background: #02b3e4;
-	cursor: default;
-	animation-name: flipInY;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
-	animation-duration: .75s;
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  position: absolute;
+  border-radius: 0px;
+  backface-visibility: hidden;
 }
 
-.deck .card.show {
-	font-size: 33px;
-}
-
-.deck .card.match {
-	cursor: default;
-	background: #E5F720;
-	font-size: 33px;
-	animation-name: rubberBand;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
-	animation-duration: .75s;
-}
-
-.deck .card.unmatched {
-	animation-name: pulse;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
-	animation-duration: .75s;
-	background: #e2043b;
-}
-
-.deck .card.disabled {
-	pointer-events: none;
-	opacity: 0.9;
-}
-
-@keyframes flipInY {
+@keyframes flip {
 	from {
 		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
 		animation-timing-function: ease-in;
@@ -207,48 +188,3 @@ ul, li {
 		transform: perspective(400px);
 	}
 }
-@keyframes rubberBand {
-	from {
-		transform: scale3d(1, 1, 1);
-	}
-
-	30% {
-		transform: scale3d(1.25, 0.75, 1);
-	}
-
-	40% {
-		transform: scale3d(0.75, 1.25, 1);
-	}
-
-	50% {
-		transform: scale3d(1.15, 0.85, 1);
-	}
-
-	65% {
-		transform: scale3d(.95, 1.05, 1);
-	}
-
-	75% {
-		transform: scale3d(1.05, .95, 1);
-	}
-
-	to {
-		transform: scale3d(1, 1, 1);
-	}
-}
-
-@keyframes pulse {
-	from {
-		transform: scale3d(1, 1, 1);
-	}
-
-	50% {
-		transform: scale3d(1.2, 1.2, 1.2);
-	}
-
-	to {
-		transform: scale3d(1, 1, 1);
-	}
-}
-
-

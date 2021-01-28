@@ -1,5 +1,4 @@
-const deckCards = document.querySelector(".card")
-let cards = ["...card"];
+const deckCards = document.getElementsByClassName(".card")
 
 const deck = document.querySelector(".deck");
 
@@ -31,6 +30,8 @@ let seconds = 0;
 
 let timeStart = false;
 
+var myMusic;
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     while (currentIndex !== 0) {
@@ -43,34 +44,24 @@ function shuffle(array) {
 
     return array;
 };
-var myMusic;
+
+
+
 document.body.onload = startGame();
 
 function startGame() {
-    const shuffledDeck = shuffle(cards);
-        for (let i = 0; i < cards.length; i++) {
-            const liTag = document.createElement('li');
-            liTag.classList.add("card");
-            const addImage = document.createElement("img");
-            liTag.appendChild(addImage);
-            addImage.setAttribute("src", "images/" + shuffledDeck[i]);
-            addImage.setAttribute("alt", "images for the memory game");
-            deck.appendChild(liTag);
-        };
-
-    myMusic = new sound("background.mp3");
-    myMusic.play();
+    opened = [];
+    cards = shuffle(deckCards);
+         for (var i = 0; i < deckCards.length; i++){
+        deck.innerHTML = "";
+        [].forEach.call(deckCards, function(item) {
+            deck.appendChild(item);
+        });
+    
+    };
+    
 };
 
-var displayCard = function (){
-    this.classList.toggle("open");
-    this.classList.toggle("show");
-    this.classList.toggle("disabled");
-};
-
-
-
-startGame();
 
 function removeCard() {
     while(deck.hasChildNodes()) {
@@ -91,6 +82,11 @@ function timer() {
 function stopTime() {
     setInterval(time)
 };
+
+function flipCard() {
+  deckCards.classList.toggle('flip');
+}
+deckCards.forEach(card => card.addEventListener('click', flipCard));
 
 function resetGame() {
     stopTime();
@@ -202,13 +198,9 @@ deck.addEventListener("click", function(event) {
         timeStart = true;
         timer();
     }
+}
         flipCard();
-    }
-    function flipCard() {
-        event.target.classList("flip");
-        addToOpen();
-
-    }
+    
     function addToOpen() {
         if(opened.length === 0 || opened.length ===1) {
             opened.push(event.target.firstElementChild);

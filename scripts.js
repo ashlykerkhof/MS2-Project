@@ -1,6 +1,7 @@
-const deckCards = document.getElementsByClassName(".card")
+let card = document.getElementsByClassName(".card");
+let cards = [...card];
 
-const deck = document.querySelector(".deck");
+const deck = document.getElementsByClassName(".deck");
 
 let opened = [];
 
@@ -16,7 +17,7 @@ const moveCount = document.querySelector(".move-counter");
 
 let moves = 0;
 
-const ring = document.getElementById("ring-rating").querySelectorAll(".ring");
+const ring = document.querySelectorAll(".ring-rating li");
 
 let ringCount = 3;
 
@@ -30,63 +31,93 @@ let seconds = 0;
 
 let timeStart = false;
 
-var myMusic;
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
+
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+        araay[randomIndex] = temporaryValue;
     }
 
-    return array;
-};
+    return cards;
+}
+
+function flipCard() {
+  cards.classList.toggle('flip');
+}
 
 
-
-document.body.onload = startGame();
-
-function startGame() {
+function startGame(){
+ 
+    
     opened = [];
-    cards = shuffle(deckCards);
-         for (var i = 0; i < deckCards.length; i++){
+
+  
+    cards = shuffle(cards);
+    
+    for (var i = 0; i < cards.length; i++){
         deck.innerHTML = "";
-        [].forEach.call(deckCards, function(item) {
+        [].forEach.call(cards, function(item) {
             deck.appendChild(item);
         });
+        cards[i].classList.remove("show", "open", "match", "disabled");
+    }
     
-    };
+    moves = 0;
+    counter.innerHTML = moves;
     
+    for (var i= 0; i < stars.length; i++){
+        stars[i].style.color = "#FFD700";
+        stars[i].style.visibility = "visible";
+    }
+    
+    second = 0;
+    minute = 0; 
+    hour = 0;
+    var timer = document.querySelector(".timer");
+    timer.innerHTML = "0 mins 0 secs";
+    clearInterval(interval);
+}
+
+var displayCard = function (){
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+    this.classList.toggle("disabled");
 };
+
 
 
 function removeCard() {
     while(deck.hasChildNodes()) {
         deck.removeChild(deck.FirstChild);
-    };
-};
-
-function timer() {
-    time = setInterval(function() {
-        seconds++;
-        if(seconds === 60) {
-            minutes ++;
-            seconds = 0;
-        };
-        timeCount.innerHTML = '<i class="fas fa-hourglass"></i>' + "Timer" + minutes + "Mins" + seconds + "Secs";
-    }, 1000);
-};
-function stopTime() {
-    setInterval(time)
-};
-
-function flipCard() {
-  deckCards.classList.toggle('flip');
+    }
 }
-deckCards.forEach(card => card.addEventListener('click', flipCard));
+
+var second = 0, minute = 0; hour = 0;
+var timer = document.querySelector(".timer");
+var interval;
+function startTimer(){
+    interval = setInterval(function(){
+        timer.innerHTML = minute+"mins "+second+"secs";
+        second++;
+        if(second == 60){
+            minute++;
+            second=0;
+        }
+        if(minute == 60){
+            hour++;
+            minute = 0;
+        }
+    },1000);
+}
+function stopTime() {
+    setInterval(time);
+}
+
 
 function resetGame() {
     stopTime();
@@ -94,8 +125,8 @@ function resetGame() {
     seconds = 0;
     minutes = 0;
     timeCount.innerHTML = '<i class="fas fa-hourglass"></i>' + "Timer = 00:00";
-    ring[1].firstElementChild.classList.add("fas fa-ring");
-    ring[2].firstElementChild.classList.add("fas fa-ring");
+    ring[1].firstElementChild.classList.add(".fa-ring");
+    ring[2].firstElementChild.classList.add(".fa-ring");
     ringCount = 3;
     moves = 0;
     moveCount.innerHTML = 0;
@@ -103,35 +134,35 @@ function resetGame() {
     opened = [];
     removeCard();
     startGame();
-};
+}
 
 function moveCounter() {
     moveCount.innerHTML ++;
     moves ++;
-};
+}
 
 function ringCounter() {
     if(moves === 16) {
         ring[2].firstElementChild.classList.remove("fas fa-ring");
         ringCount --;
-    };
+    }
     if(moves === 22) {
         ring[1].firstElementChild.classList.remove("fas fa-ring");
         ringCount --;
-    };
-};
+    }
+}
 
 function compareTwo(){
     if(opened.length === 2); {
         document.body.style.pointerEvents = "none";
-    };
+    }
     if(opened.length === 2 && opened[0].src) {
         match();
     }
     else if(opened.length === 2 && opened[0].src != opened[1].src) {
         noMatch();
-    };
-};
+    }
+}
 
 function match() {
     setTimeout(function(){
@@ -144,7 +175,7 @@ function match() {
     }, 600);
     moveCounter();
     ringCounter();
-};
+}
 
 function noMatch() {
     setTimeout(function(){
@@ -155,16 +186,16 @@ function noMatch() {
     }, 700);
     moveCounter();
     ringCounter();
-};
+}
 
 function addStats() {
     const stats = document.querySelector(".modal-content");
         for(let i = 0; i <= 3; i++) {
             const statsElement = document.createElement("p");
-            statsElement.classList.add("stats")
+            statsElement.classList.add("stats");
             stats.appendChild(statsElement);
         }
-        let p = stats.querySelectorAll("p.stats")
+        let p = stats.querySelectorAll("p.stats");
         p[0].innerHTML = "Time Taken" + minutes + "Minutes" + seconds + "Seconds";
         p[1].innerHTML = "Moves Used" + moves;
         p[2].innerHTML = "Ring Rating" + ringCount + "Out of 3";
@@ -175,13 +206,13 @@ function displayModal() {
     modal.style.display = "block";
     modalClose.onclick = function() {
         modal.style.display = "none";    
-    }
-        window.onclick = function(event) {
+    };
+        window.onclick = function() {
             if(this.event.target == modal) {
                 modal.style.display = "none";
-            };
+            }
         };
-};
+}
 
 function winGame() {
     if(matched.length === 20) {
@@ -191,15 +222,12 @@ function winGame() {
     }
 }
 
-deck.addEventListener("click", function(event) {
-    if(event.target.nodeName === "LI") {
-        console.log(event.target.nodeName + "Was Clicked")
+    
         if(timeStart === false) {
         timeStart = true;
-        timer();
+        startTimer();
     }
-}
-        flipCard();
+
     
     function addToOpen() {
         if(opened.length === 0 || opened.length ===1) {
@@ -208,10 +236,10 @@ deck.addEventListener("click", function(event) {
         compareTwo();
     }
 
-})
+;
 
 reset.addEventListener("click", resetGame);
 playAgain.addEventListener("click", function(){
     modal.style.display = "none";
     resetGame();
-})
+});

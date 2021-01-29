@@ -118,13 +118,11 @@ ul, li {
     flex-wrap: wrap;
     position: relative;
     justify-content: space-around;
-    align-items: center;
     height: 600px;
     margin-bottom: 60px;
     left: 27%;
     width: 640px;
-    padding-right: 10px;
-
+    perspective: 1000px;
 }
 
 .card {
@@ -138,7 +136,7 @@ ul, li {
   transition: transform .5s;
 }
 
-.deck, .card {
+.deck{
     box-shadow: 2px 5px 25px 0 #fbeca3;
     background: #cf6010;
 }
@@ -149,6 +147,7 @@ ul, li {
 .card:active {
   transform: scale(0.97);
   transition: transform .2s;
+  
 }
 
 
@@ -163,28 +162,11 @@ ul, li {
   backface-visibility: hidden;
 }
 
-@keyframes flip {
-	from {
-		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-		animation-timing-function: ease-in;
-		opacity: 0;
-	}
-
-	40% {
-		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
-		animation-timing-function: ease-in;
-	}
-
-	60% {
-		transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
-		opacity: 1;
-	}
-
-	80% {
-		transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
-	}
-
-	to {
-		transform: perspective(400px);
-	}
+.card.flip {
+    transform: rotateY(180deg);
 }
+
+.front {
+  transform: rotateY(180deg);
+}
+

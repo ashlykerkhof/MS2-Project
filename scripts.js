@@ -1,26 +1,27 @@
-// cards array holds all cards
+// cards array
 let card = document.getElementsByClassName("card");
 let cards = [...card]
 console.log(cards);
 
-// deck of all cards in game
+// deck
 const deck = document.getElementById("deck-card");
 
-// declaring move variable
+// moves variable
 let moves = 0;
 let counter = document.querySelector(".move-counter");
 
-// declare variables for star icons
+// variable for the rings
 const rings = document.querySelectorAll(".fa-ring");
 
-// declaring variable of matchedCards
+// matchedCards
 let matchedCard = document.getElementsByClassName("match");
 
- // stars list
+ // rings list
  let ringsList = document.querySelectorAll(".ring-counter li");
 
  // reset button
  let reset = document.querySelector(".reset-btn");
+ 
  // close icon in modal
  let closeicon = document.querySelector(".close");
 
@@ -31,9 +32,8 @@ let matchedCard = document.getElementsByClassName("match");
 var openedCards = [];
 
 
-// @description shuffles cards
-// @param {array}
-// @returns shuffledarray
+//shuffle the cards array
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -49,26 +49,26 @@ function shuffle(array) {
 };
 
 
-// @description shuffles cards when page is refreshed / loads
+// shuffles card on reload
 document.body.onload = startGame();
 
 
-// @description function to start a new play 
+// start the game
 function startGame(){
     // shuffle deck
     cards = shuffle(cards);
-    // remove all exisiting classes from each card
     for (var i = 0; i < cards.length; i++){
         deck.innerHTML = "";
         [].forEach.call(cards, function(item) {
             deck.appendChild(item);
         });
+        //remove exsisting classes
         cards[i].classList.remove("show", "open", "match", "disabled");
     }
     // reset moves
     moves = 0;
-    moves = counter.innerHTML;
-    // reset rating
+    counter.innerHTML = 0;
+    // reset ring rating
     for (var i= 0; i < rings.length; i++){
         rings[i].style.color = "#FFD700";
         rings[i].style.visibility = "visible";
@@ -82,25 +82,23 @@ function startGame(){
     clearInterval(interval);
 }
 
-function resetGame(reset) {
-    reset;
-    stopTime();
-    startTimer = false;
+function resetGame() {
+
+    startTimer();
     seconds = 0;
     minutes = 0;
     timer.innerHTML = '<i class="fas fa-hourglass"></i>' + "Timer = 00:00";
-    ring[1].firstElementChild.classList.add(".fa-ring");
-    ring[2].firstElementChild.classList.add(".fa-ring");
+    rings[1].classList.add(".fa-ring");
+    rings[2].classList.add(".fa-ring");
     ringsList = 3;
     moves = 0;
     counter.innerHTML = 0;
     matchedCard = [];
     openedCards = [];
-    removeCard();
     startGame();
 }
 
-// @description toggles open and show class to display cards
+// toggles open and show class to display cards
 var displayCard = function (){
     this.classList.toggle("open");
     this.classList.toggle("show");
@@ -108,7 +106,7 @@ var displayCard = function (){
 };
 
 
-// @description add opened cards to OpenedCards list and check if cards are match or not
+// add opened cads to see if match
 function cardOpen() {
     openedCards.push(this);
     var len = openedCards.length;
@@ -123,7 +121,7 @@ function cardOpen() {
 };
 
 
-// @description when cards match
+// when cards match
 function matched(){
     openedCards[0].classList.add("match", "disabled");
     openedCards[1].classList.add("match", "disabled");
@@ -133,7 +131,7 @@ function matched(){
 }
 
 
-// description when cards don't match
+// when cards don't match
 function unmatched(){
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
@@ -147,7 +145,7 @@ function unmatched(){
 }
 
 
-// @description disable cards temporarily
+// disable cards temporarily
 function disable(){
     Array.prototype.filter.call(cards, function(card){
         card.classList.add('disabled');
@@ -155,7 +153,7 @@ function disable(){
 }
 
 
-// @description enable cards and disable matched cards
+// enable cards and disable matched cards
 function enable(){
     Array.prototype.filter.call(cards, function(card){
         card.classList.remove('disabled');
@@ -166,7 +164,7 @@ function enable(){
 }
 
 
-// @description count player's moves
+//  count player's moves
 function moveCounter(){
     moves++;
     counter.innerHTML = moves;
@@ -199,6 +197,7 @@ function moveCounter(){
 var second = 0, minute = 0; hour = 0;
 var timer = document.querySelector(".timer");
 var interval;
+
 function startTimer(){
     interval = setInterval(function(){
         timer.innerHTML = minute+"mins "+second+"secs";
@@ -217,15 +216,15 @@ function startTimer(){
 
 // @description congratulations when all cards match, show modal and moves, time and rating
 function congratulations(){
-    if (matchedCard.length == 16){
+    if (matchedCard.length == 20){
         clearInterval(interval);
         finalTime = timer.innerHTML;
 
         // show congratulations modal
         modal.classList.add("show");
 
-        // declare star rating variable
-        var starRating = document.querySelector(".stars").innerHTML;
+        // declare ring rating variable
+        var ringList = document.querySelector(".ring").innerHTML;
 
         //showing move, rating, time on modal
         document.getElementById("finalMove").innerHTML = moves;

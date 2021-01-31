@@ -133,18 +133,27 @@ h1 {
   margin: 0px;
   position: relative;
   padding: 0;
-  
-
+  transition: transform .5s;
+   transform: scale(1);
+  transform-style: preserve-3d;
   
 }
-
-.card img {
+.front, .back {
     width: 100%;
     height: 100%;
     padding: 0;
-    backface-visibility: visible;
+    position: absolute;
+    backface-visibility: hidden;
     margin: 0;
+    
+    
 }
+
+.front {
+    transform: rotateY(180deg);
+}
+
+
 
 .deck, .card {
     box-shadow: 2px 5px 25px 0 #fbeca3;
@@ -152,7 +161,7 @@ h1 {
 }
 
 .deck .card.open {
-	transform: rotateY(0);
+	transform: rotateY(0deg);
 	background: url(images/onering.jpg);
 	cursor: default;
 	animation-name: flipInY;
@@ -162,7 +171,8 @@ h1 {
 }
 
 .deck .card.show {
-	font-size: 33px;
+    font-size: 33px;
+    background: url(images/onering.jpg);
 }
 
 .deck .card.match {
@@ -192,32 +202,33 @@ h1 {
 	visibility: visible !important;
 	opacity: 100 !important;
 }
+.modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
 
-
+.modal:target {
+	visibility: visible;
+	opacity: 1;
+}
+  
 
 @keyframes flipInY {
 	from {
-		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		-webkit-transform: rotateY(0deg); transform: rotateY(0deg);;
 		animation-timing-function: ease-in;
 		opacity: 0;
 	}
 
-	40% {
-		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
-		animation-timing-function: ease-in;
-	}
-
-	60% {
-		transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
-		opacity: 1;
-	}
-
-	80% {
-		transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
-	}
-
 	to {
-		transform: perspective(400px);
+		-webkit-transform: rotateY(180deg); transform: rotateY(180deg);
 	}
 }
 

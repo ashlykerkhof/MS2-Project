@@ -136,6 +136,7 @@ h1 {
   transition: transform .5s;
    transform: scale(1);
   transform-style: preserve-3d;
+  transform: rotateY(180deg);
   
 }
 .front, .back {
@@ -150,9 +151,12 @@ h1 {
 }
 
 .front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+.back {
     transform: rotateY(180deg);
 }
-
 
 
 .deck, .card {
@@ -162,7 +166,6 @@ h1 {
 
 .deck .card.open {
 	transform: rotateY(0deg);
-	background: url(images/onering.jpg);
 	cursor: default;
 	animation-name: flipInY;
 	-webkit-backface-visibility: visible !important;
@@ -172,7 +175,7 @@ h1 {
 
 .deck .card.show {
     font-size: 33px;
-    background: url(images/onering.jpg);
+
 }
 
 .deck .card.match {
@@ -195,7 +198,8 @@ h1 {
 
 .deck .card.disabled {
 	pointer-events: none;
-	opacity: 0.9;
+    opacity: 0.9;
+
 }
 
 .show {

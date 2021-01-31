@@ -26,7 +26,7 @@ let matchedCard = document.getElementsByClassName("match");
  let closeicon = document.querySelector(".close");
 
  // declare modal
- let modal = document.getElementById("modal-1")
+ var modal = document.getElementsByClassName(".modal")
 
  // array for opened cards
 var openedCards = [];
@@ -176,17 +176,17 @@ function moveCounter(){
         startTimer();
     }
     // setting rates based on moves
-    if (moves > 8 && moves < 12){
+    if (moves > 11 && moves < 15){
         for( i= 0; i < 3; i++){
             if(i > 1){
-                stars[i].style.visibility = "collapse";
+                rings[i].style.visibility = "collapse";
             }
         }
     }
-    else if (moves > 13){
+    else if (moves > 18){
         for( i= 0; i < 3; i++){
             if(i > 0){
-                stars[i].style.visibility = "collapse";
+                rings[i].style.visibility = "collapse";
             }
         }
     }
@@ -221,14 +221,15 @@ function congratulations(){
         finalTime = timer.innerHTML;
 
         // show congratulations modal
-        modal.classList.add("show");
+
+        modal.classList.add('show')
 
         // declare ring rating variable
-        var ringList = document.querySelector(".ring").innerHTML;
+        var ringRating = document.querySelector(".ring").innerHTML;
 
         //showing move, rating, time on modal
         document.getElementById("finalMove").innerHTML = moves;
-        document.getElementById("starRating").innerHTML = starRating;
+        document.getElementById("ringRating").innerHTML =ringRating;
         document.getElementById("totalTime").innerHTML = finalTime;
 
         //closeicon on modal
@@ -239,7 +240,7 @@ function congratulations(){
 
 // @description close icon on modal
 function closeModal(){
-    closeicon.addEventListener("click", function(event){
+    closeicon.addEventListener("click", function(){
         modal.classList.remove("show");
         startGame();
     });

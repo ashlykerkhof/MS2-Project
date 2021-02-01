@@ -317,3 +317,55 @@ h1 {
 		transform: scale3d(1, 1, 1);
 	}
 }
+
+@media screen and (max-width: 1024px) {
+	.body {
+		font-size: 22px;
+	}
+
+	.deck {
+		width: 420px;
+        height: 440px;
+        left: 20%;
+	}
+
+    .time-container{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+	.card {
+		width: calc(20% - 10px);
+        height: calc(25% - 10px);
+	}
+
+	.modal-sm {
+        width: 60%;
+        left: 10%;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.body {
+		font-size: 22px;
+	}
+
+	.deck {
+		width: 320px;
+        height: 340px;
+        left: 10%;
+	}
+
+    .time-container{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+	.card {
+		width: calc(20% - 10px);
+        height: calc(25% - 10px);
+	}
+
+	.modal-sm {
+        width: 60%;
+        left: 10%;
+	}
+}

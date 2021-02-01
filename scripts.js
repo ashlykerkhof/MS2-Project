@@ -1,6 +1,6 @@
 // cards array
 let card = document.getElementsByClassName("card");
-let cards = [...card]
+let cards = [...card];
 console.log(cards);
 
 // deck
@@ -45,14 +45,11 @@ function shuffle(array) {
     }
 
     return array;
-};
+}
 
 
 // shuffles card on reload
 document.body.onload = startGame();
-
-// music
-
 
 // start the game
 function startGame(){
@@ -66,7 +63,6 @@ function startGame(){
         //remove exsisting classes
         cards[i].classList.remove("show", "open", "match", "disabled");
     }
-     
     // reset moves
     moves = 0;
     counter.innerHTML = 0;
@@ -94,7 +90,7 @@ function resetGame() {
     rings[2].classList.add(".fa-ring");
     ringsList = 3;
     moves = 0;
-    myMusic.play();
+    
     counter.innerHTML = 0;
     matchedCard = [];
     openedCards = [];
@@ -121,7 +117,7 @@ function cardOpen() {
             unmatched();
         }
     }
-};
+}
 
 
 // when cards match
@@ -179,14 +175,14 @@ function moveCounter(){
         startTimer();
     }
     // setting rates based on moves
-    if (moves > 11 && moves < 15){
+    if (moves > 14 && moves < 17){
         for( i= 0; i < 3; i++){
             if(i > 1){
                 rings[i].style.visibility = "collapse";
             }
         }
     }
-    else if (moves > 18){
+    else if (moves > 20){
         for( i= 0; i < 3; i++){
             if(i > 0){
                 rings[i].style.visibility = "collapse";
@@ -196,7 +192,7 @@ function moveCounter(){
 }
 
 
-// @description game timer
+// game timer
 var second = 0, minute = 0; hour = 0;
 var timer = document.querySelector(".timer");
 var interval;
@@ -217,10 +213,10 @@ function startTimer(){
 }
 
 
-// @description congratulations when all cards match, show modal and moves, time and rating
+// define modal
 let modal = document.getElementById('myModal');
 
-//If 16 matched cards, display modal
+// display modal on completion
 function congratsModal() {
   if(matchedCard.length === 20){
     clearInterval(interval);
@@ -235,7 +231,7 @@ function congratsModal() {
     }
 }
 
-// @description close icon on modal
+// close icon on modal
 function closeModal() {
     closeButton.addEventListener('click', function(e){
     modal.style.display = 'none';
@@ -245,7 +241,7 @@ function closeModal() {
 
 
 
-// @desciption for user to play Again 
+// for user to play Again 
 function playAgain(){
     modal.style.display = 'none';
     window.location.reload();
@@ -259,4 +255,4 @@ for (var i = 0; i < cards.length; i++){
     card.addEventListener("click", displayCard);
     card.addEventListener("click", cardOpen);
     card.addEventListener("click",congratsModal);
-};
+}

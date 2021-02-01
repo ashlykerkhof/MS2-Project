@@ -82,16 +82,17 @@ To start the game click on one of the back facing cards, the game will begin the
 
 testing included:
 
-1.[w3cValidator](w3cValidator)
-2.[Jshint](Jshint)
-3.[DOMconsole](DOM Console)
+1. [w3cValidator](w3cValidator)
+2. [Jshint](Jshint)
+3. [DOMconsole](DOM-Console)
 
 ### Testing/Bugs
 
-*bug found and fixed where everytime the timer was counting the game would move from left to right depending on the number in the timer.
-*bug found and fixed where the cards wouldn't flip to their back face.
-*bug fiound and fixed where the cards would flip and would disappear once they flipped.
-*bug found where the congratulations message at the end of the game doesn't show up upon completion.
+* bug found and fixed where everytime the timer was counting the game would move from left to right depending on the number in the timer.
+* bug found and fixed where the cards wouldn't flip to their back face.
+* bug fiound and fixed where the cards would flip and would disappear once they flipped.
+* bug found where the congratulations message at the end of the game doesn't show up upon completion.
+* bug found, doesn't seem to load the game properly on other browsers.. still finding solution.
 
 
 <!--Deployment -->

@@ -94,19 +94,71 @@ h1 {
 
 /*----modal congrats----*/
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 99;
-    height: 100%;
-    width: 100%;
 
+.modal-sm {
+	display: none;
+	position: fixed;
+	z-index: 1;
+  left: 40%;
+  width: 55%;
+  top: 0;
+	
 }
-
 .modal-content {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+.modal-content {
+  position: absolute;
+	background: url(images/shire.jpg) no-repeat cover;
+	margin: 15% auto;
+	padding: 20px 10px 20px 10px;
+    border: 1px solid #888;
+    width: 55%;
+	font-family: 'Bilbo', cursive;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+.modal-content h2 {
+    font-size: 30px;
+}
+
+.modal-content p {
+    font-size: 20px;
+}
+
+.modal-sm img {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    left: 45%;
+}
+
+.close {
+	color: black;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  display: block;
+}
+
+
+#closeModal {
+  color: black;
+  align-content: center;
+  padding: 5px 5px 5px 5px;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -206,22 +258,8 @@ h1 {
 	visibility: visible !important;
 	opacity: 100 !important;
 }
-.modal {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.7);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
 
-.modal:target {
-	visibility: visible;
-	opacity: 1;
-}
+
   
 
 @keyframes flipInY {

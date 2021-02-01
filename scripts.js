@@ -23,13 +23,12 @@ let matchedCard = document.getElementsByClassName("match");
  let reset = document.querySelector(".reset-btn");
  
  // close icon in modal
- let closeicon = document.querySelector(".close");
+ let closeButton = document.querySelector(".close");
 
- // declare modal
- var modal = document.getElementsByClassName(".modal")
-
+ 
  // array for opened cards
 var openedCards = [];
+
 
 
 //shuffle the cards array
@@ -52,6 +51,8 @@ function shuffle(array) {
 // shuffles card on reload
 document.body.onload = startGame();
 
+// music
+
 
 // start the game
 function startGame(){
@@ -65,6 +66,7 @@ function startGame(){
         //remove exsisting classes
         cards[i].classList.remove("show", "open", "match", "disabled");
     }
+     
     // reset moves
     moves = 0;
     counter.innerHTML = 0;
@@ -92,6 +94,7 @@ function resetGame() {
     rings[2].classList.add(".fa-ring");
     ringsList = 3;
     moves = 0;
+    myMusic.play();
     counter.innerHTML = 0;
     matchedCard = [];
     openedCards = [];
@@ -215,41 +218,37 @@ function startTimer(){
 
 
 // @description congratulations when all cards match, show modal and moves, time and rating
-function congratulations(){
-    if (matchedCard.length == 20){
-        clearInterval(interval);
-        finalTime = timer.innerHTML;
+let modal = document.getElementById('myModal');
 
-        // show congratulations modal
-
-        modal.classList.add('show')
-
-        // declare ring rating variable
-        var ringRating = document.querySelector(".ring").innerHTML;
-
-        //showing move, rating, time on modal
-        document.getElementById("finalMove").innerHTML = moves;
-        document.getElementById("ringRating").innerHTML =ringRating;
-        document.getElementById("totalTime").innerHTML = finalTime;
-
-        //closeicon on modal
-        closeModal();
-    };
+//If 16 matched cards, display modal
+function congratsModal() {
+  if(matchedCard.length === 20){
+    clearInterval(interval);
+    modal.style.display = 'block';
+    let finalTime = timer.innerHTML;
+    let finalStars = document.querySelector('.ring-rating').innerHTML;
+    let finalMoves = document.querySelector('.move-counter').innerHTML;
+    //Values to display on modal
+    document.getElementById('finalMoves').innerHTML = finalMoves;
+    document.getElementById('finalRings').innerHTML = finalStars;
+    document.getElementById('finalTime').innerHTML = finalTime;
+    }
 }
-
 
 // @description close icon on modal
-function closeModal(){
-    closeicon.addEventListener("click", function(){
-        modal.classList.remove("show");
-        startGame();
-    });
+function closeModal() {
+    closeButton.addEventListener('click', function(e){
+    modal.style.display = 'none';
+    window.location.reload();
+  });
 }
+
 
 
 // @desciption for user to play Again 
 function playAgain(){
-    modal.classList.remove("show");
+    modal.style.display = 'none';
+    window.location.reload();
     startGame();
 }
 
@@ -259,5 +258,5 @@ for (var i = 0; i < cards.length; i++){
     card = cards[i];
     card.addEventListener("click", displayCard);
     card.addEventListener("click", cardOpen);
-    card.addEventListener("click",congratulations);
+    card.addEventListener("click",congratsModal);
 };

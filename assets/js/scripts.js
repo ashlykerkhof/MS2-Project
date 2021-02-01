@@ -53,6 +53,7 @@ document.body.onload = startGame();
 
 // start the game
 function startGame(){
+    console.log("start game initiated");
     // shuffle deck
     cards = shuffle(cards);
     for (var i = 0; i < cards.length; i++){
@@ -134,8 +135,8 @@ function matched(){
 function unmatched(){
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
-    disable();
     setTimeout(function(){
+        disable();
         openedCards[0].classList.remove("show", "open", "no-event","unmatched");
         openedCards[1].classList.remove("show", "open", "no-event","unmatched");
         enable();

@@ -53,7 +53,7 @@ document.body.onload = startGame();
 
 // start the game - inspired my memory card tutorial scotch.io
 function startGame(){
-    console.log("start game initiated");
+    
     // shuffle deck
     cards = shuffle(cards);
     for (var i = 0; i < cards.length; i++){

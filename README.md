@@ -68,7 +68,9 @@ To start the game click on one of the back facing cards, the game will begin the
 
 <a href="wireframes2.pdf" alt="wireframes" target="_blank">WireFrames PDF Here!</a>
 
+## Mark-up
 
+<img src="assets/images/markup.png" alt="responsive on devices">
 <!--TESTING-->
 
 ## Tests
@@ -86,6 +88,10 @@ To start the game click on one of the back facing cards, the game will begin the
 # Manual Testing
 
 * Testing on other browsers proved to be problematic. Certain pictures wouldn't turn and glitches would be sent through the browser, have been working on a way round this making bad steps however, some issues are still noticed.
+
+# Lighthouse
+
+<img src="assets/images/lighthouse.png" alt="light house test">
 
 ### Testing/Bugs
 

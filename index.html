@@ -16,11 +16,11 @@
     <div class="container">
     <section>
         <!--Logo and background-->
-        <img class="logo" src="images/logo.png
+        <img class="logo" src="assets/images/logo.png
         " alt="">
         <h1>Memory Game!</h1>
     </section>
-    <!---Memory game-->
+    <!---Score card-->
 
     <section class="score">
         <ul class="ring-rating">
@@ -34,13 +34,14 @@
         </div>
         <div class="reset">
             <button class="btn reset-btn" onclick="resetGame()"> Reset <i class="fas fa-redo"></i></button>
+            
         </div>
     </section>
-        
+        <!--Memory Game-->
         <ul class="deck" id="deck-card">
             <li class="card" type="aragorn">
                 <img class="front" src="assets/images/aragorn.jpg" alt="aragorn">
-                <img class="back" src="images/onering.jpg" alt="ring">
+                <img class="back" src="assets/images/onering.jpg" alt="ring">
             </li>
             <li class="card" type="aragorn">
                 <img class="front" src="assets/images/aragorn.jpg" alt="aragorn">
@@ -96,7 +97,7 @@
             </li>
             <li class="card" type="legolas">
                 <img class="front" src="assets/images/legolas.jpg" alt="legolas">
-                <img class="back" src="assetsimages/onering.jpg" alt="ring">
+                <img class="back" src="assets/images/onering.jpg" alt="ring">
             </li>
             <li class="card" type="legolas">
                 <img class="front" src="assets/images/legolas.jpg" alt="legolas">
@@ -120,6 +121,7 @@
             </li>
 
         </ul>
+        <!--modal-->
     <div id="myModal" class="modal-sm">
          <div class="modal-content">
             <h2>Congratulations!</h2>
@@ -134,9 +136,6 @@
 
 </div>
 
-    <footer>
-        <!--Footer-->
-    </footer>
 
     <script rel="stylesheet" src="assets/js/scripts.js"></script>
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -16,7 +16,7 @@ body {
     margin: 0;
     font-family: 'Bilbo', cursive;
     text-align: center;
-    background: url(assets/images/background.jpg) no-repeat center fixed;
+    background: url(../images/background.jpg) no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size:cover;
@@ -188,7 +188,7 @@ h1 {
    transform: scale(1);
   transform-style: preserve-3d;
   transform: rotateY(180deg);
-  
+  -webkit-transform: rotateY(180deg);
 }
 .front, .back {
     width: 100%;
@@ -205,19 +205,22 @@ h1 {
 .front {
     z-index: 2;
     transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
 }
 .back {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
-
+/*----card classes---*/
 .deck, .card {
     box-shadow: 2px 5px 25px 0 #fbeca3;
     background: #cf6010;
 }
 
 .deck .card.open {
-	transform: rotateY(0deg);
+    transform: rotateY(0deg); 
+    -webkit-transform: rotateY(0deg);
 	cursor: default;
 	animation-name: flipInY;
 	-webkit-backface-visibility: visible !important;
@@ -232,7 +235,7 @@ h1 {
 
 .deck .card.match {
 	cursor: default;
-	
+	background: green;
 	font-size: 33px;
 	animation-name: rubberBand;
 	-webkit-backface-visibility: visible !important;
@@ -251,6 +254,7 @@ h1 {
 .deck .card.disabled {
 	pointer-events: none;
     opacity: 0.9;
+    transition-duration: 0.5s;
 
 }
 
@@ -260,7 +264,7 @@ h1 {
 }
 
 
-  
+/*----animations-----*/
 
 @keyframes flipInY {
 	from {
@@ -317,6 +321,8 @@ h1 {
 		transform: scale3d(1, 1, 1);
 	}
 }
+
+/*----media screens----*/
 
 @media screen and (max-width: 1024px) {
 	.body {

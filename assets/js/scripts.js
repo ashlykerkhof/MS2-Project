@@ -51,7 +51,7 @@ function shuffle(array) {
 // shuffles card on reload
 document.body.onload = startGame();
 
-// start the game
+// start the game - inspired my memory card tutorial scotch.io
 function startGame(){
     console.log("start game initiated");
     // shuffle deck

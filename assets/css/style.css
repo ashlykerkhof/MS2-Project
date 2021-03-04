@@ -53,9 +53,9 @@ h1 {
     padding: 5px;
 }
 
-.move-counter {
+.move-counter, .move {
     padding: 5px;
-    
+    color: #fbeca3;
 }
 
 .reset button {
@@ -171,6 +171,7 @@ h1 {
     position: relative;
     justify-content: space-around;
     height: 600px;
+    margin-top: 60px;
     margin-bottom: 60px;
     padding-left: 0;
     left: 27%;
@@ -182,7 +183,9 @@ h1 {
   width: calc(20% - 10px);
   height: calc(25% - 10px);
   margin: 0px;
+  margin-top: 5px;
   position: relative;
+  margin-bottom: 2px;
   padding: 0;
   transition: transform .5s;
   -webkit-transition: transform .5s;
@@ -227,7 +230,7 @@ h1 {
 	animation-name: flipInY;
 	-webkit-backface-visibility: visible !important;
 	backface-visibility: visible !important;
-	animation-duration: .75s;
+	animation-duration: .5s;
 }
 
 .deck .card.show {
@@ -249,7 +252,7 @@ h1 {
 	animation-name: pulse;
 	-webkit-backface-visibility: visible !important;
 	backface-visibility: visible !important;
-	animation-duration: .75s;
+	animation-duration: .5s;
 	background: #e2043b;
 }
 

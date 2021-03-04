@@ -1,6 +1,8 @@
 // cards array
 let card = document.getElementsByClassName("card");
 let cards = [...card];
+ let hasFlippedCard = false;
+  let firstCard, secondCard;
 console.log(cards);
 
 // deck
@@ -29,7 +31,8 @@ let matchedCard = document.getElementsByClassName("match");
  // array for opened cards
 var openedCards = [];
 
-
+// lock the cards so only 2 are shown
+let lockBoard = false;
 
 //shuffle the cards array
 
@@ -83,7 +86,6 @@ function startGame(){
 
 function resetGame() {
 
-    startTimer();
     seconds = 0;
     minutes = 0;
     timer.innerHTML = '<i class="fas fa-hourglass"></i>' + "Timer = 00:00";
@@ -91,7 +93,6 @@ function resetGame() {
     rings[2].classList.add(".fa-ring");
     ringsList = 3;
     moves = 0;
-    
     counter.innerHTML = 0;
     matchedCard = [];
     openedCards = [];
@@ -106,16 +107,18 @@ var displayCard = function (){
 };
 
 
-// add opened cads to see if match
+// add opened cards to see if match
 function cardOpen() {
+    if (lockBoard) return;
+     if (this === firstCard) return;
     openedCards.push(this);
     var len = openedCards.length;
     if(len === 2){
         moveCounter();
-        if(openedCards[0].type === openedCards[1].type){
+        if(openedCards[0].dataset.framework === openedCards[1].dataset.framework){
             matched();
         } else {
-            unmatched();
+            unmatched();   
         }
     }
 }
@@ -136,12 +139,14 @@ function unmatched(){
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
     setTimeout(function(){
-        disable();
         openedCards[0].classList.remove("show", "open", "no-event","unmatched");
         openedCards[1].classList.remove("show", "open", "no-event","unmatched");
-        enable();
         openedCards = [];
-    },1100);
+          if ( $('.show').length > 2 ) {
+    return false;
+  }
+        enable();
+    },350);
 }
 
 
@@ -150,6 +155,8 @@ function disable(){
     Array.prototype.filter.call(cards, function(card){
         card.classList.add('disabled');
     });
+    resetBoard();
+    lockBoard = true;
 }
 
 
@@ -245,7 +252,6 @@ function closeModal() {
 // for user to play Again 
 function playAgain(){
     modal.style.display = 'none';
-    window.location.reload();
     startGame();
 }
 
@@ -257,3 +263,8 @@ for (var i = 0; i < cards.length; i++){
     card.addEventListener("click", cardOpen);
     card.addEventListener("click",congratsModal);
 }
+
+function resetBoard() {
+   [hasFlippedCard, lockBoard] = [false, false];
+   [firstCard, secondCard] = [null, null];
+ }

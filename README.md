@@ -73,27 +73,31 @@ To start the game click on one of the back facing cards, the game will begin the
 <img src="assets/images/markup.png" alt="responsive on devices">
 <!--TESTING-->
 
-## Tests
+# Tests
 
 
-# Jshint
+## Jshint
 
 * Fixes, where certain codes wouldn't work due to incorrect use of Semi Colons.
 * Found issue where modal hadn't been defined correctly.
 
-# W3v Validator
+## W3v Validator
 
 * Found issue where images didn't have the correct files, also spelling mistakes were noticed. 
 
-# Manual Testing
+<img src="assets/images/w3.png" alt="W3 Validator">
+
+* No issues found besides the suggestion for a h1/h2 at the start of a section. 
+
+## Manual Testing
 
 * Testing on other browsers proved to be problematic. Certain pictures wouldn't turn and glitches would be sent through the browser, have been working on a way round this making bad steps however, some issues are still noticed.
 
-# Lighthouse
+## Lighthouse
 
 <img src="assets/images/lighthouse.png" alt="light house test">
 
-### Testing/Bugs
+## Testing/Bugs
 
 * bug found and fixed where everytime the timer was counting the game would move from left to right depending on the number in the timer.
 * bug found and fixed where the cards wouldn't flip to their back face.

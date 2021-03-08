@@ -35,7 +35,7 @@
         <div class="reset">
             <button class="btn reset-btn redo" onclick="resetGame()"> Reset <i class="fas fa-redo"></i></button>
             <!--Button with audio and mute-->
-            <button class="btn reset-btn" id="mute" onclick="document.getElementById('my_audio').muted = !document.getElementById('my_audio').muted;$(this).toggleClass('mute')"> <audio src="shire.mp3" id="my_audio" loop="loop"></audio> Mute <i class="fas fa-volume-mute"></i></button>
+            <button class="btn reset-btn" id="mute" onclick="document.getElementById('my_audio').muted = !document.getElementById('my_audio').muted;$(this).toggleClass('mute')"> Mute <i class="fas fa-volume-mute"></i></button>
              <button class="btn reset-btn" id="instruction"
             data-toggle="modal" data-target="#instructions">Instructions <i class="fas fa-info-circle"></i></button>
             
@@ -149,7 +149,7 @@
             </div>
 
         </div>
-
+ <audio src="shire.mp3" id="my_audio" loop="loop"></audio>
         <!--modal-->
     <div id="myModal" class="modal-sm">
          <div class="modal-content">

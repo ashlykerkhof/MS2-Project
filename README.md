@@ -104,7 +104,7 @@ WireFrames PDF Here!
 * bug found and fixed where the cards would flip and would disappear once they flipped.
 * bug found where the congratulations message at the end of the game doesn't show up upon completion.
 * bug found, doesn't seem to load the game properly on other browsers.. Still finding solution.
-# bug found, 
+# bug found, after reset is pressed once cards flip over and match as soon as another card is flipped it becomes disabled.. finding solution.
 
 
 

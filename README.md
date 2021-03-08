@@ -11,30 +11,30 @@
     The idea here is to make a game that is enjoyable and has a replay value, i want the user to have a fun experience and I believe they don't have to be a lord of the rings fan to play!</p>
 <p align="center">
     
-    <a href="https://github.com/ashlykerkhof/ms2-project"><strong>Explore the docs »</strong></a>
-    <a href="https://ashlykerkhof.github.io/MS2-project/">View Demo</a>
+    <a href="https://github.com/ashlykerkhof/MS2-Project"><strong>Explore the docs »</strong></a>
+    <a href="https://ashlykerkhof.github.io/MS2-Project">View Demo</a>
 
 
 
-<!-- TABLE OF CONTENTS -->
+
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
+ * [Built With](#built-with)
 * [UX](#UX)
-  * [User Stories](#use-stories)
-  * [Wireframes](#WireFrames)
-* [Testng](#testing)
+ * [Userstories](#use-stories)
+ * [Wireframes](#WireFrames)
+* [Testing](#testing)
 * [Deployment](#deployment)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+* [Acknowledgments](#acknowledgments)
 
 
 
-<!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
-The game is made for users to experience a fun and interctive experience, I want people to play the game and i want them to return and try to beat their old score.
+The game is made for users to experience a fun and interactive experience, I want people to play the game and i want them to return and try to beat their old score.
 
 
 
@@ -46,7 +46,7 @@ The game is made for users to experience a fun and interctive experience, I want
 * [Javascript](Javascript)
 
 
-<!-- User Experience-->
+
 
 ## UX
 
@@ -66,12 +66,12 @@ To start the game click on one of the back facing cards, the game will begin the
 
 ## Wireframes
 
-<a href="wireframes2.pdf" alt="wireframes" target="_blank">WireFrames PDF Here!</a>
+WireFrames PDF Here!
 
 ## Mark-up
 
-<img src="assets/images/markup.png" alt="responsive on devices">
-<!--TESTING-->
+
+
 
 # Tests
 
@@ -85,7 +85,7 @@ To start the game click on one of the back facing cards, the game will begin the
 
 * Found issue where images didn't have the correct files, also spelling mistakes were noticed. 
 
-<img src="assets/images/w3.png" alt="W3 Validator">
+
 
 * No issues found besides the suggestion for a h1/h2 at the start of a section. 
 
@@ -95,18 +95,19 @@ To start the game click on one of the back facing cards, the game will begin the
 
 ## Lighthouse
 
-<img src="assets/images/lighthouse.png" alt="light house test">
+
 
 ## Testing/Bugs
 
-* bug found and fixed where everytime the timer was counting the game would move from left to right depending on the number in the timer.
+* bug found and fixed where every time the timer was counting the game would move from left to right depending on the number in the timer.
 * bug found and fixed where the cards wouldn't flip to their back face.
 * bug found and fixed where the cards would flip and would disappear once they flipped.
 * bug found where the congratulations message at the end of the game doesn't show up upon completion.
-* bug found, doesn't seem to load the game properly on other browsers.. still finding solution.
+* bug found, doesn't seem to load the game properly on other browsers.. Still finding solution.
+# bug found, 
 
 
-<!--Deployment -->
+
 
 ## Deployment
 
@@ -118,22 +119,22 @@ The site has been deployed to GitPages, to deploy site do as follows:
 4. Click Save.
 
 To commit your work/edits type in to the console
-``` 
+“` 
 git init
-```
+“`
 Then add the file you have editted.
-```
+“`
 git add
-```
+“`
 Commit your work.
-```
+“`
 git commit
-```
+“`
 Then once it has all been commited, push it to GitPages.
-```
+“`
 git push
-```
-<!-- LICENSE -->
+“`
+
 ## License
 
 Copyright and lincensing done by me. 
@@ -142,7 +143,7 @@ Copyright and lincensing done by me.
 
 All images were searched for and found on Google Images.
 
-<!-- CONTACT -->
+
 ## Contact
 
 Your Name - [@ashlykerkhof](https://twitter.com/Ashlykerkhof) - email: Ashly.Kerkhof@outlook.com
@@ -151,8 +152,8 @@ Project Link: [https://github.com/ashlykerkhof/ms2-project](https://github.com/a
 
 
 
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+
+## Acknowledgments
 
 * [Float Panel](Float-panel)
 * [W3school](W3school)

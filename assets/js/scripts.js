@@ -57,9 +57,12 @@ function shuffle(array) {
 // shuffles card on reload
 document.body.onload = startGame();
 
+window.onload=function(){
+      document.getElementById("my_audio").play();
+    }
+
 // start the game - inspired my memory card tutorial scotch.io
 function startGame(){
-    
     // shuffle deck
     cards = shuffle(cards);
     for (var i = 0; i < cards.length; i++){
@@ -270,3 +273,10 @@ function resetBoard() {
    [hasFlippedCard, lockBoard] = [false, false];
    [firstCard, secondCard] = [null, null];
  }
+
+function change()
+{
+    var elem = document.getElementById("mute");
+    if (elem.value=="Close Curtain") elem.value = "Open Curtain";
+    else elem.value = "Close Curtain";
+}

@@ -343,16 +343,16 @@ h1 {
 
 /*----media screens----*/
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
 	.body {
 		font-size: 22px;
-	}
-
-	.deck {
-		width: 420px;
-        height: 440px;
-        left: 20%;
-	}
+    }
+    
+    .deck {
+        width: 80%;
+        height: 800px;
+        left: 10%;
+    }
 
     .time-container{
         margin-left: 10%;
@@ -369,7 +369,7 @@ h1 {
 	}
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 600px) {
 	.body {
 		font-size: 22px;
 	}
@@ -380,11 +380,7 @@ h1 {
     height: 100%;
     }
     
-	.deck {
-		width: 320px;
-        height: 340px;
-        left: 10%;
-	}
+
 
     .time-container{
         margin-left: 10%;

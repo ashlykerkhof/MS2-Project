@@ -40,12 +40,15 @@ h1 {
 
 }
 
+
+
 /*-------score tab----*/
 
 .score {
     font-size: 25px;
     font-family: 'Bilbo', cursive;
     padding: 10px 0 20px;
+    display: inline;
 }
 
 .ring-rating, li {
@@ -57,19 +60,31 @@ h1 {
     padding: 5px;
     color: #fbeca3;
 }
-
+.reset {
+    right: 100%;
+    position: relative;
+}
 .reset button {
-    background: #cf6010;
+    background: #000;
+    color: #ffca3a;
+    font-size: 20px;
     padding-top: 2px;
-    margin-top: 4px;
+    margin-top: 30px;
     border-radius: 5px;
+    padding-left: 20px;
+    margin-left: 40px;
+}
+
+.reset-btn:hover {
+    background-color: #fff;
+    color: #000;
 }
 
 .time-container {
    background-color: black;
    border-radius: 15px;
    color: #fff;
-   margin-left: 47%;
+   margin-left: 46%;
    margin-right: 47%;
    margin-bottom: 10px;
    padding: 12px;
@@ -90,6 +105,17 @@ h1 {
 
 .card, .btn-reset {
     cursor: pointer;
+}
+
+/*--instructions---*/
+#modal {
+    display: none;
+	position: fixed;
+	z-index: 1;
+  left: 40%;
+  width: 55%;
+  top: 0;
+	
 }
 
 /*----modal congrats----*/
@@ -170,11 +196,11 @@ h1 {
     flex-wrap: wrap;
     position: relative;
     justify-content: space-around;
-    height: 600px;
-    margin-top: 60px;
+    height: 300px;
+    margin-top: 10px;
     margin-bottom: 60px;
     padding-left: 0;
-    left: 27%;
+    left: 25%;
     width: 640px;
     perspective: 1000px;
 }

@@ -27,6 +27,8 @@ let matchedCard = document.getElementsByClassName("match");
  // close icon in modal
  let closeButton = document.querySelector(".close");
 
+ // close instuctions
+ let close = document.getElementById('#closeModal1')
  
  // array for opened cards
 var openedCards = [];
@@ -34,8 +36,8 @@ var openedCards = [];
 // lock the cards so only 2 are shown
 let lockBoard = false;
 
-//shuffle the cards array
 
+//shuffle the cards array
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -49,6 +51,7 @@ function shuffle(array) {
 
     return array;
 }
+
 
 
 // shuffles card on reload
@@ -112,8 +115,7 @@ function cardOpen() {
     if (lockBoard) return;
      if (this === firstCard) return;
     openedCards.push(this);
-    var len = openedCards.length;
-    if(len === 2){
+    if(openedCards.length == 2){
         moveCounter();
         if(openedCards[0].dataset.framework === openedCards[1].dataset.framework){
             matched();
@@ -183,14 +185,14 @@ function moveCounter(){
         startTimer();
     }
     // setting rates based on moves
-    if (moves > 14 && moves < 17){
+    if (moves > 16 && moves < 20){
         for( i= 0; i < 3; i++){
             if(i > 1){
                 rings[i].style.visibility = "collapse";
             }
         }
     }
-    else if (moves > 20){
+    else if (moves > 25){
         for( i= 0; i < 3; i++){
             if(i > 0){
                 rings[i].style.visibility = "collapse";
@@ -220,9 +222,9 @@ function startTimer(){
     },1000);
 }
 
-
 // define modal
 let modal = document.getElementById('myModal');
+
 
 // display modal on completion
 function congratsModal() {

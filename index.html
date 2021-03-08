@@ -22,7 +22,7 @@
     </section>
     <!---Score card-->
 
-    <section class="score">
+    <div class="score in-line">
         <ul class="ring-rating">
             <li class="ring"><i class="fas fa-ring"></i></li>
             <li class="ring"><i class="fas fa-ring"></i></li>
@@ -33,11 +33,36 @@
             <span class="timer"><i class="fas fa-hourglass"></i> 00:00 </span>
         </div>
         <div class="reset">
-            <button class="btn reset-btn" onclick="resetGame()"> Reset <i class="fas fa-redo"></i></button>
-             <button class="btn reset-btn" onclick=""> Call the Eagles <i class="fas fa-redo"></i></button>
+            <button class="btn reset-btn redo" onclick="resetGame()"> Reset <i class="fas fa-redo"></i></button>
+             <button class="btn reset-btn" id="instruction"
+            data-toggle="modal" data-target="#instructions">Instructions<i class="fas fa-redo"></i></button>
             
         </div>
-    </section>
+    </div>
+<div class="modal fade bd-example-modal-lg" id="instructions" tabindex="-1" role="dialog" aria-labelledby="Instructions" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Instructions</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Welcome to the Lord of the Rings memory game!</p>
+        <p>The idea of the game is to flip the cards and find the cards that match. There are 20 cards to flip and you will be rated on how fast you can finish the game!</p>
+        <p>Good luck and try and get all three rings to please Gollum and help him find his precious!</p>
+        <p>To start the game, close this box, and click on any card to start. The timer will start when the first two cards have been flipped!</p>
+        <p>Go get gollums Precious!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
         <!--Memory Game-->
         <div class="deck" id="deck-card">
             <div class="card" data-framework="aragorn" >
@@ -138,12 +163,14 @@
 </div>
 
 
-    <script rel="stylesheet" src="assets/js/scripts.js"></script>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
+<script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script rel="stylesheet" src="assets/js/scripts.js"></script>
+
 </body>
 
 </html>

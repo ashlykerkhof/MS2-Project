@@ -200,8 +200,8 @@ h1 {
     height: 600px;
     margin-top: 10px;
     margin-bottom: 60px;
-    padding-left: 0;
-    left: 25%;
+    padding-left: 0px;
+    left: 23%;
     width: 640px;
     perspective: 1000px;
 }

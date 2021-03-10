@@ -28,7 +28,7 @@ let matchedCard = document.getElementsByClassName("match");
  let closeButton = document.querySelector(".close");
 
  // close instuctions
- let close = document.getElementById('#closeModal1')
+ let closeOne = document.getElementById('#closeModal1');
  
  // array for opened cards
 var openedCards = [];
@@ -58,7 +58,7 @@ function shuffle(array) {
 document.body.onload = startGame();
 window.onload=function(){
       document.getElementById("my_audio").play();
-    }
+    };
 
 
 // start the game - inspired my memory card tutorial scotch.io
@@ -77,9 +77,9 @@ function startGame(){
     moves = 0;
     counter.innerHTML = 0;
     // reset ring rating
-    for (var i= 0; i < rings.length; i++){
-        rings[i].style.color = "#FFD700";
-        rings[i].style.visibility = "visible";
+    for (var j= 0; j < rings.length; j++){
+        rings[j].style.color = "#FFD700";
+        rings[j].style.visibility = "visible";
     }
     //reset timer
     second = 0;

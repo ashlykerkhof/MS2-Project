@@ -22,9 +22,10 @@
 * [About the Project](#about-the-project)
  * [Built With](#built-with)
 * [UX](#UX)
- * [Userstories](#use-stories)
+ * [Instructions](#Instructions)
+ * [Userstories](#user-stories)
  * [Wireframes](#WireFrames)
-* [Testing](#testing)
+* [Testing](#Testing/Bugs)
 * [Deployment](#deployment)
 * [Contact](#contact)
 * [Acknowledgments](#acknowledgments)
@@ -64,16 +65,16 @@ To start the game click on one of the back facing cards, the game will begin the
 
 3. i want the site to look good, easy to use and to stand out.
 
-## Wireframes
+## WireFrames
 
-WireFrames PDF Here!
+<a href="assets/wireframes/wireframes2.pdf">WireFrames PDF here!</a>
 
 ## Mark-up
 
+<img src="assets/wireframes/markup2.png">
 
 
-
-# Tests
+# Testing
 
 
 ## Jshint
@@ -81,11 +82,13 @@ WireFrames PDF Here!
 * Fixes, where certain codes wouldn't work due to incorrect use of Semi Colons.
 * Found issue where modal hadn't been defined correctly.
 
+<img src="assets/wireframes/jshint.png">
+
 ## W3v Validator
 
 * Found issue where images didn't have the correct files, also spelling mistakes were noticed. 
 
-
+<img src="assets/wireframes/w3validation.png">
 
 * No issues found besides the suggestion for a h1/h2 at the start of a section. 
 
@@ -95,7 +98,9 @@ WireFrames PDF Here!
 
 ## Lighthouse
 
+<img src="assets/wireframes/lighthouse1.png">
 
+* Lighthouse shows tyat everything is up to standard however, there is a problem with the low resolution images. looking for a solution.
 
 ## Testing/Bugs
 
@@ -104,7 +109,7 @@ WireFrames PDF Here!
 * bug found and fixed where the cards would flip and would disappear once they flipped.
 * bug found where the congratulations message at the end of the game doesn't show up upon completion.
 * bug found, doesn't seem to load the game properly on other browsers.. Still finding solution.
-# bug found, after reset is pressed once cards flip over and match as soon as another card is flipped it becomes disabled.. finding solution.
+* bug found, after reset is pressed once cards flip over and match as soon as another card is flipped it becomes disabled.. finding solution.
 
 
 

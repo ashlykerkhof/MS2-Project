@@ -81,8 +81,8 @@ h1 {
    background-color: black;
    border-radius: 15px;
    color: #fff;
-   margin-left: 46%;
-   margin-right: 47%;
+   margin-left: 43%;
+   margin-right: 43%;
    margin-bottom: 10px;
    padding: 12px;
 }
@@ -113,6 +113,10 @@ h1 {
   width: 55%;
   top: 0;
 	
+}
+
+.modal-body p {
+    font-size: 40px;
 }
 
 /*----modal congrats----*/

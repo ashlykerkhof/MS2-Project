@@ -109,7 +109,8 @@ To start the game click on one of the back facing cards, the game will begin the
 * bug found and fixed where the cards would flip and would disappear once they flipped.
 * bug found where the congratulations message at the end of the game doesn't show up upon completion.
 * bug found, doesn't seem to load the game properly on other browsers.. Still finding solution.
-* bug found, after reset is pressed once cards flip over and match as soon as another card is flipped it becomes disabled.. finding solution.
+* bug found, after reset is pressed once cards flip over and match as soon as another card is flipped it becomes disabled, solved!
+* bug found, game doesn't seem to work on iphone and safari.. looking for a fix but at the moment i cant find anything.
 
 
 
